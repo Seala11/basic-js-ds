@@ -47,6 +47,8 @@ function removeKFromList(l, k) {
   while (currNode) {
     if (currNode.value === k) removeNode(prevNode, currNode, nextNode, k);
 
+    if (!currNode.next) break;
+
     prevNode = currNode;
     currNode = prevNode.next;
     nextNode = currNode.next;
