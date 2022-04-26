@@ -12,23 +12,24 @@ const { NotImplementedError } = require('../extensions/index.js');
  * stack.pop(); // undefined
  *
  */
+let stack = [];
+
+// LIFO – last in first out principle
 class Stack {
-  push(/* element */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  push(element) {
+    stack.unshift(element);
   }
 
   pop() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (stack.length === 0) return undefined;
+    return stack.shift();
   }
 
   peek() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return stack[0];
   }
 }
 
 module.exports = {
-  Stack
+  Stack,
 };
